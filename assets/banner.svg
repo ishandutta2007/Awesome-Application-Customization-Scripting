@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background:#0a0d18; border-radius:12px; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;">
+  <defs>
+    <!-- Background Linear Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d1a" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#070b14" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradients -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.35" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.35" />
+    </linearGradient>
+
+    <linearGradient id="pillGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.35" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+    </pattern>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="35" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* Keyframe Animations */
+    @keyframes orbFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, -25px) scale(1.15); }
+    }
+    @keyframes orbFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-35px, 30px) scale(1.1); }
+    }
+    @keyframes pulseBeam {
+      0%, 100% { opacity: 0.25; stroke-dashoffset: 0; }
+      50% { opacity: 0.8; stroke-dashoffset: 50; }
+    }
+    @keyframes floatingPill {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .orb1 { animation: orbFloat1 9s ease-in-out infinite; transform-origin: 200px 100px; }
+    .orb2 { animation: orbFloat2 11s ease-in-out infinite; transform-origin: 1000px 240px; }
+    .beam { stroke-dasharray: 8 6; animation: pulseBeam 4s linear infinite; }
+    .pill1 { animation: floatingPill 5s ease-in-out infinite; }
+    .pill2 { animation: floatingPill 6s ease-in-out infinite 0.7s; }
+    .pill3 { animation: floatingPill 5.5s ease-in-out infinite 1.4s; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" rx="12" />
+  <rect width="1200" height="360" fill="url(#grid)" rx="12" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g filter="url(#glow)">
+    <circle class="orb1" cx="220" cy="110" r="130" fill="#38bdf8" opacity="0.16" />
+    <circle class="orb2" cx="980" cy="220" r="150" fill="#a855f7" opacity="0.18" />
+    <circle cx="600" cy="180" r="90" fill="#4f46e5" opacity="0.12" />
+  </g>
+
+  <!-- Ambient Dynamic Circuit Flow Lines -->
+  <g fill="none" opacity="0.4">
+    <path class="beam" d="M 80,70 Q 300,30 550,70 T 1120,60" stroke="#38bdf8" stroke-width="2" />
+    <path class="beam" d="M 60,300 Q 350,330 650,290 T 1140,310" stroke="#818cf8" stroke-width="2" />
+    <path d="M 150,180 L 1050,180" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- Floating Dynamic Tech Pills in Background Layer -->
+  <g class="pill1">
+    <rect x="70" y="240" width="165" height="38" rx="19" fill="url(#pillGrad1)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" />
+    <text x="152" y="264" fill="#bae6fd" font-size="13" font-weight="600" text-anchor="middle">⚡ Low-Code Platforms</text>
+  </g>
+  <g class="pill2">
+    <rect x="960" y="70" width="170" height="38" rx="19" fill="url(#pillGrad2)" stroke="rgba(192, 132, 252, 0.4)" stroke-width="1.2" />
+    <text x="1045" y="94" fill="#f5d0fe" font-size="13" font-weight="600" text-anchor="middle">🔮 Scripting Engines</text>
+  </g>
+  <g class="pill3">
+    <rect x="970" y="250" width="160" height="38" rx="19" fill="url(#pillGrad3)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.2" />
+    <text x="1050" y="274" fill="#a7f3d0" font-size="13" font-weight="600" text-anchor="middle">🛠️ Developer Tools</text>
+  </g>
+
+  <!-- Foreground Content: Guaranteed crisp, high contrast & prominent -->
+  <g id="foreground">
+    <!-- Super Badge / Tag -->
+    <rect x="440" y="46" width="320" height="28" rx="14" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+    <circle cx="456" cy="60" r="4" fill="#22c55e" />
+    <text x="605" y="65" fill="#e2e8f0" font-size="12" font-weight="600" letter-spacing="1.5" text-anchor="middle">CURATED AWESOME DIRECTORY</text>
+
+    <!-- Main Title -->
+    <text x="600" y="145" fill="url(#primaryGrad)" font-size="44" font-weight="800" text-anchor="middle" letter-spacing="-0.8">
+      Application Customization &amp; Scripting
+    </text>
+
+    <!-- Subtitle -->
+    <text x="600" y="195" fill="#f8fafc" font-size="20" font-weight="600" text-anchor="middle" opacity="0.95">
+      The Ultimate Guide to Low-Code Engines, Extensibility Frameworks &amp; Internal Tools
+    </text>
+
+    <!-- Feature Description / Tagline -->
+    <text x="600" y="232" fill="#94a3b8" font-size="14" font-weight="400" text-anchor="middle">
+      Empowering developers &amp; architects with deep benchmarking, transparent pricing, and open-source alternatives
+    </text>
+
+    <!-- Quick Stats Bar in Foreground -->
+    <g transform="translate(320, 265)">
+      <rect x="0" y="0" width="560" height="44" rx="22" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+      
+      <text x="90" y="27" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">🚀 200k+ Stars</text>
+      <text x="180" y="27" fill="rgba(255, 255, 255, 0.2)" font-size="16" text-anchor="middle">|</text>
+      <text x="280" y="27" fill="#818cf8" font-size="13" font-weight="700" text-anchor="middle">📊 Enterprise Benchmarks</text>
+      <text x="380" y="27" fill="rgba(255, 255, 255, 0.2)" font-size="16" text-anchor="middle">|</text>
+      <text x="470" y="27" fill="#34d399" font-size="13" font-weight="700" text-anchor="middle">🔓 100% Free Tiers</text>
+    </g>
+  </g>
+</svg>
